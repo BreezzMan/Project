@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
 
+
     public float groundDrag;
 
     public float jumpForce;
@@ -14,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+    [Header("Keybinds")]
+    public KeyCode jumpKey = KeyCode.Space;
+    
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
@@ -32,13 +36,15 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        readyToJump = true;
     }
 
     private void Update()
     {
        //проверка земли
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight, whatIsGround);
+        Debug.Log(grounded);
+
         MyInput();
         SpeedControl();
 
@@ -62,8 +68,10 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(KeyCode.Space) && readyToJump && grounded)
+
+        if(Input.GetKeyDown(jumpKey) && readyToJump && grounded)
         {
+            Debug.Log("JUMP");
             readyToJump = false;
 
             Jump();
