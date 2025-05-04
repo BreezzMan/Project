@@ -17,13 +17,24 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode nextCheckPoint = KeyCode.N;
     
-    [Header("Ground Check")]
+    [Header("Player SpawnPoint")]
+    public List<Transform> spawnPointList;
+    private int nextSpawnPoint = 0;
+
+    [Header("Options")]
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
 
     public Transform orientation;
+
+    [Header("Sounds")]
+    public AudioClip deathSound;
+    public AudioClip teleportSound;
+
+    private AudioSource audio;
 
     float horizontalInput;
     float verticalInput;
@@ -35,15 +46,14 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
         rb.freezeRotation = true;
         readyToJump = true;
     }
 
     private void Update()
     {
-       //проверка земли
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight, whatIsGround);
-        Debug.Log(grounded);
 
         MyInput();
         SpeedControl();
@@ -71,18 +81,21 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(jumpKey) && readyToJump && grounded)
         {
-            Debug.Log("JUMP");
             readyToJump = false;
-
             Jump();
-
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+
+        if (Input.GetKeyDown(nextCheckPoint))
+        {
+            nextSpawnPoint = (nextSpawnPoint + 1) % spawnPointList.Count;
+            spawnPlayerOn(nextSpawnPoint);
+        }
+
     }
 
     private void MovePlayer()
     {
-        //расчёт направления движения
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         if(grounded)
@@ -96,6 +109,29 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private void spawnPlayerOn(int spawnIndex) {
+        if (spawnIndex < 0 || spawnIndex >= spawnPointList.Count)
+        {
+            return;
+        }
+        audio.PlayOneShot(teleportSound);
+        transform.position = spawnPointList[spawnIndex].position;
+    }
+
+    public void SetCheckpoint(int index)
+    {
+        if (index >= 0 && index < spawnPointList.Count)
+        {
+            nextSpawnPoint = index; 
+        }
+    }
+
+    public void respawn()
+    {
+        audio.PlayOneShot(deathSound);
+        transform.position = spawnPointList[nextSpawnPoint].position;
+    }
+
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -103,7 +139,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(flatVel.magnitude > moveSpeed)
         {
-            //ограничение скорости
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
@@ -111,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        //перезапуск y
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\unity3d\\Project\\FinalProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|d:\\unity3d\\project\\finalproject\\assets\\scripts\\scoreholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scoreholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|d:\\unity3d\\project\\finalproject\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|d:\\unity3d\\project\\finalproject\\assets\\scripts\\savecheckpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\savecheckpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|d:\\unity3d\\project\\finalproject\\assets\\scripts\\gamemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1456745-ED92-4EB6-8905-E64DC1E47277}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ScoreHolder.cs",
+              "DocumentMoniker": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\ScoreHolder.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreHolder.cs",
+              "ToolTip": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\ScoreHolder.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScoreHolder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T12:03:30.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
+              "ToolTip": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwHUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T11:53:36.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaveCheckPoint.cs",
+              "DocumentMoniker": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\SaveCheckPoint.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveCheckPoint.cs",
+              "ToolTip": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\SaveCheckPoint.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SaveCheckPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T11:52:11.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameManagerScript.cs",
+              "DocumentMoniker": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\GameManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagerScript.cs",
+              "ToolTip": "D:\\unity3d\\Project\\FinalProject\\Assets\\Scripts\\GameManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManagerScript.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwDEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T11:26:07.926Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
